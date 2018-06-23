@@ -68,5 +68,6 @@
 
 	<modules>
 		<module>DefeatEast-util</module>
+		<module>DefeatEast-captcha</module>
 	</modules>
 </project>
