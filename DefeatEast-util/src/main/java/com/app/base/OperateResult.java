@@ -2,6 +2,15 @@ package com.app.base;
 
 public class OperateResult<T> {
 
+	public OperateResult() {
+		
+	}
+
+	public OperateResult(AdviceEnum adviceEnum) {
+		this.msg = adviceEnum.getMsg();
+		this.errno = adviceEnum.getErrno();
+	}
+
 	private Integer errno;
 
 	private String msg;

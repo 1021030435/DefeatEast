@@ -5,17 +5,13 @@ import static com.app.base.AdviceEnum.*;
 public abstract class BaseController {
 
 	protected <T> OperateResult<T> result(AdviceEnum adviceEnum, T data) {
-		OperateResult<T> result = new OperateResult<T>();
-		result.setErrno(adviceEnum.getErrno());
-		result.setMsg(adviceEnum.getMsg());
+		OperateResult<T> result = new OperateResult<T>(adviceEnum);
 		result.setData(data);
 		return result;
 	}
 
 	protected <T> OperateResult<T> result(AdviceEnum adviceEnum) {
-		OperateResult<T> result = new OperateResult<T>();
-		result.setErrno(adviceEnum.getErrno());
-		result.setMsg(adviceEnum.getMsg());
+		OperateResult<T> result = new OperateResult<T>(adviceEnum);
 		return result;
 	}
 
