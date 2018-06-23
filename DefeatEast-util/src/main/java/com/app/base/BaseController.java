@@ -1,49 +1,36 @@
 package com.app.base;
 
+import static com.app.base.AdviceEnum.*;
 
 public abstract class BaseController {
 
-	//protected AppLog log;
-
-	protected OperateResult result(Integer errno, String msg, Object data) {
-		OperateResult result = new OperateResult();
-		result.setErrno(errno);
-		result.setMsg(msg);
+	protected <T> OperateResult<T> result(AdviceEnum adviceEnum, T data) {
+		OperateResult<T> result = new OperateResult<T>();
+		result.setErrno(adviceEnum.getErrno());
+		result.setMsg(adviceEnum.getMsg());
 		result.setData(data);
 		return result;
 	}
 
-	protected OperateResult result(Integer errno, String msg) {
-		OperateResult result = new OperateResult();
-		result.setErrno(errno);
-		result.setMsg(msg);
+	protected <T> OperateResult<T> result(AdviceEnum adviceEnum) {
+		OperateResult<T> result = new OperateResult<T>();
+		result.setErrno(adviceEnum.getErrno());
+		result.setMsg(adviceEnum.getMsg());
 		return result;
 	}
 
-	protected OperateResult result(String msg, Object data) {
-		OperateResult result = new OperateResult();
-		result.setErrno(AppConfig.SUCCESS);
-		result.setMsg(msg);
-		result.setData(data);
+	protected <T> OperateResult<T> result() {
+		OperateResult<T> result = new OperateResult<T>();
+		result.setErrno(SYSTEM_ERROR.getErrno());
+		result.setMsg(SYSTEM_ERROR.getMsg());
 		return result;
 	}
 
-	protected OperateResult result(Object data) {
-		OperateResult result = new OperateResult();
-		result.setErrno(AppConfig.SUCCESS);
-		result.setMsg(AppConfig.SUCCESS_MSG);
+	protected <T> OperateResult<T> result(T data) {
+		OperateResult<T> result = new OperateResult<T>();
+		result.setErrno(SUCCESS.getErrno());
+		result.setMsg(SUCCESS.getMsg());
 		result.setData(data);
-		return result;
-	}
-	
-	protected OperateResult result() {
-		OperateResult result = new OperateResult();
-		result.setErrno(AppConfig.SUCCESS);
-		result.setMsg(AppConfig.SUCCESS_MSG);
-		return result;
-	}
-	
-	protected OperateResult result(OperateResult result) {
 		return result;
 	}
 }

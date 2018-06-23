@@ -2,8 +2,7 @@ package com.app.advice;
 
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-import com.app.base.AppConfig;
+import static com.app.base.AdviceEnum.*;
 import com.app.base.BaseController;
 import com.app.base.OperateResult;
 import com.app.exception.CacheException;
@@ -16,32 +15,32 @@ import com.app.exception.PhoneException;
 public class CodeAdvice extends BaseController{
 
 	@ExceptionHandler(value = CacheException.class)
-	public OperateResult test(CacheException ex) {
+	public OperateResult<Object> test(CacheException ex) {
 		ex.printStackTrace();
-		return result(AppConfig.CACHE_ERROR, "cache错误");
+		return result(CACHE_ERROR);
 	}
 	
 	@ExceptionHandler(value = FrequencyException.class)
-	public OperateResult test(FrequencyException ex) {
+	public OperateResult<Object> test(FrequencyException ex) {
 		ex.printStackTrace();
-		return result(AppConfig.CODE_EXIST_ERROR, "验证码发送频繁");
+		return result(FREQUENCY_ERROR);
 	}
 	
 	@ExceptionHandler(value = EmailErrorException.class)
-	public OperateResult test(EmailErrorException ex) {
+	public OperateResult<Object> test(EmailErrorException ex) {
 		ex.printStackTrace();
-		return result(AppConfig.EMAIL_ERROR, "邮箱错误");
+		return result(EMAIL_ERROR);
 	}
 	
 	@ExceptionHandler(value = CacheSMSCodeException.class)
-	public OperateResult test(CacheSMSCodeException ex) {
+	public OperateResult<Object> test(CacheSMSCodeException ex) {
 		ex.printStackTrace();
-		return result(AppConfig.CACHE_ERROR, "cache错误");
+		return result(CACHE_ERROR);
 	}
 	
 	@ExceptionHandler(value = PhoneException.class)
-	public OperateResult test(PhoneException ex) {
+	public OperateResult<Object> test(PhoneException ex) {
 		ex.printStackTrace();
-		return result(AppConfig.PHONE_ERROR, "手机号错误");
+		return result(PHONE_ERROR);
 	}
 }

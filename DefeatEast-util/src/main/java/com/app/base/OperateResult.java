@@ -1,24 +1,12 @@
 package com.app.base;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-
-public class OperateResult {
+public class OperateResult<T> {
 
 	private Integer errno;
 
 	private String msg;
 
-	@JsonInclude(Include.NON_NULL)
-	private Object data;
-
-	public Object getData() {
-		return data;
-	}
-
-	public void setData(Object data) {
-		this.data = data;
-	}
+	private T data;
 
 	public String getMsg() {
 		return msg;
@@ -34,5 +22,13 @@ public class OperateResult {
 
 	public void setErrno(Integer errno) {
 		this.errno = errno;
+	}
+
+	public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
 	}
 }
