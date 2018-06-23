@@ -4,42 +4,18 @@
 	xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<parent>
 		<groupId>DefeatEast</groupId>
 		<artifactId>DefeatEast</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	
+	<groupId>util</groupId>
 	<artifactId>util</artifactId>
 	<name>util</name>
-	<url>http://maven.apache.org</url>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-		<!-- <dependency>
-			<groupId>log-server</groupId>
-			<artifactId>log-server</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>redis</groupId>
-			<artifactId>redis</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		 -->
-
-		<dependency>
-			<groupId>mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
@@ -50,8 +26,6 @@
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 		</dependency>
-
-		
 	</dependencies>
 
 </project>
