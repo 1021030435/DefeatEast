@@ -3,9 +3,9 @@ package com.app.advice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.app.controller.base.AppConfig;
-import com.app.controller.base.BaseController;
-import com.app.controller.base.OperateResult;
+import com.app.base.AppConfig;
+import com.app.base.BaseController;
+import com.app.base.OperateResult;
 import com.app.exception.PswException;
 import com.app.exception.UserNotFoundException;
 

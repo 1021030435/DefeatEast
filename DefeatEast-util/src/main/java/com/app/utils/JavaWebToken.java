@@ -3,7 +3,7 @@ package com.app.utils;
 import java.util.Date;
 import java.util.Map;
 
-import com.app.controller.base.AppConfig;
+import com.app.base.AppConfig;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;

@@ -2,7 +2,7 @@ package com.app.utils;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-import com.app.controller.base.AppConfig;
+import com.app.base.AppConfig;
 
 public class RandomCode {
 	

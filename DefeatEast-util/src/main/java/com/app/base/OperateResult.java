@@ -1,4 +1,4 @@
-package com.app.controller.base;
+package com.app.base;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;

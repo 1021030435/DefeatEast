@@ -67,6 +67,6 @@
 	</build>
 
 	<modules>
-		<module>util</module>
+		<module>DefeatEast-util</module>
 	</modules>
 </project>

@@ -11,9 +11,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	
-	<groupId>util</groupId>
-	<artifactId>util</artifactId>
-	<name>util</name>
+	<groupId>DefeatEast-util</groupId>
+	<artifactId>DefeatEast-util</artifactId>
+	<name>DefeatEast-util</name>
 	
 	<dependencies>
 		<dependency>

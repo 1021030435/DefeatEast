@@ -1,4 +1,4 @@
-package com.app.controller.base;
+package com.app.base;
 
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

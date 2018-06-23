@@ -1,4 +1,4 @@
-package com.app.controller.base;
+package com.app.base;
 
 
 public abstract class BaseController {
