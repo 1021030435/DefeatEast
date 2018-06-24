@@ -3,6 +3,7 @@ package com.app.code.db.model;
 import java.util.Date;
 
 public class CodeRecord {
+	
     private Integer id;
 
     private String phone;
