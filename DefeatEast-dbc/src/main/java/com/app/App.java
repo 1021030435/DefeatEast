@@ -1,4 +1,4 @@
-package com.app.captcha;
+package com.app;
 
 /**
  * Hello world!

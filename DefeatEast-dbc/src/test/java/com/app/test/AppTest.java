@@ -1,4 +1,4 @@
-package com.app.captcha.test;
+package com.app.test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
