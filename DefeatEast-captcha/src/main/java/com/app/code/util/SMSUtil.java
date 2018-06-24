@@ -5,8 +5,6 @@ import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import com.app.code.config.SmsModel;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
@@ -19,8 +17,7 @@ public class SMSUtil {
 	@Autowired
 	private SmsModel model;
 
-	public boolean send(String phoneNumber, String code)
-			throws ApiException, JsonParseException, JsonMappingException, IOException {
+	public boolean send(String phoneNumber, String code) throws ApiException, IOException {
 		TaobaoClient client = new DefaultTaobaoClient(model.getServerUrl(), model.getAppKey(), model.getAppSecret());
 		AlibabaAliqinFcSmsNumSendRequest request = new AlibabaAliqinFcSmsNumSendRequest();
 		request.setExtend(model.getExtend());
