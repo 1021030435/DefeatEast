@@ -68,5 +68,7 @@
 
 	<modules>
 		<module>DefeatEast-util</module>
+		<module>DefeatEast-captcha</module>
+		<module>DefeatEast-dbc</module>
 	</modules>
 </project>

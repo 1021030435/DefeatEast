@@ -2,7 +2,7 @@ package com.app.utils;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-import com.app.base.AppConfig;
+import static com.app.base.AppConfig.*;
 
 public class RandomCode {
 	
@@ -11,8 +11,8 @@ public class RandomCode {
 	 * @return
 	 */
 	public static String getCode() {
-		int verifySize = AppConfig.COED_SIZE;
-		String sources = AppConfig.CODE_SOURCES;
+		int verifySize = COED_SIZE;
+		String sources = CODE_SOURCES;
 		int codesLen = sources.length();
 		ThreadLocalRandom rand = ThreadLocalRandom.current();
 		StringBuilder verifyCode = new StringBuilder(verifySize);
