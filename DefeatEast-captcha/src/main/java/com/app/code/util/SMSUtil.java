@@ -1,12 +1,12 @@
 package com.app.code.util;
 
 import java.io.IOException;
-import org.springframework.beans.factory.annotation.Value;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import com.app.code.model.SMSResponse;
+import com.app.code.config.SmsModel;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.taobao.api.ApiException;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
@@ -16,39 +16,21 @@ import com.taobao.api.response.AlibabaAliqinFcSmsNumSendResponse;
 @Component
 public class SMSUtil {
 
-	@Value("${sms.serverUrl}")
-	private String serverUrl;
+	@Autowired
+	private SmsModel model;
 
-	@Value("${sms.appKey}")
-	private String appKey;
-
-	@Value("${sms.appSecret}")
-	private String appSecret;
-
-	@Value("${sms.extend}")
-	private String extend;
-
-	@Value("${sms.type}")
-	private String type;
-
-	@Value("${sms.freeSignName}")
-	private String freeSignName;
-
-	@Value("${sms.templateCode}")
-	private String templateCode;
-
-	public boolean send(String phoneNumber, String code) throws ApiException, JsonParseException, JsonMappingException, IOException {
-		TaobaoClient client = new DefaultTaobaoClient(serverUrl, appKey, appSecret);
+	public boolean send(String phoneNumber, String code)
+			throws ApiException, JsonParseException, JsonMappingException, IOException {
+		TaobaoClient client = new DefaultTaobaoClient(model.getServerUrl(), model.getAppKey(), model.getAppSecret());
 		AlibabaAliqinFcSmsNumSendRequest request = new AlibabaAliqinFcSmsNumSendRequest();
-		request.setExtend(extend);
-		request.setSmsType(type);
-		request.setSmsFreeSignName(freeSignName);
+		request.setExtend(model.getExtend());
+		request.setSmsType(model.getType());
+		request.setSmsFreeSignName(model.getFreeSignName());
 		request.setSmsParamString("{\"code\":\"" + code + "\"}");
 		request.setRecNum(phoneNumber);
-		request.setSmsTemplateCode(templateCode);
+		request.setSmsTemplateCode(model.getTemplateCode());
 		AlibabaAliqinFcSmsNumSendResponse response = client.execute(request);
-		SMSResponse smsResponse = new ObjectMapper().readValue(response.getBody(), SMSResponse.class);
-		if (smsResponse.getAlibaba_aliqin_fc_sms_num_send_response().getResult().getSuccess()) {
+		if (response.isSuccess()) {
 			return true;
 		}
 
