@@ -3,7 +3,7 @@ Implementation-Title: DefeatEast-util
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: Administrator
 Implementation-Vendor-Id: DefeatEast-util
-Build-Jdk: 1.8.0_171
+Build-Jdk: 1.8.0_40
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
  ot-starter-parent/DefeatEast/DefeatEast-util
 Created-By: Maven Integration for Eclipse
