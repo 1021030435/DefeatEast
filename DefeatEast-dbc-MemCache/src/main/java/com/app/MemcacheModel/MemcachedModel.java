@@ -1,4 +1,4 @@
-package com.app.dbc.config.memchache;
+package com.app.MemcacheModel;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -7,23 +7,23 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "memcached")
 public class MemcachedModel {
 
-	private String servers;
+	private String servers="127.0.0.1:11210";
 
-	private Boolean failover;
+	private Boolean failover=true;
 
-	private Integer initConn;
+	private Integer initConn=10;
 
-	private Integer minConn;
+	private Integer minConn=5;
 
-	private Integer maxConn;
+	private Integer maxConn=250;
 
-	private Integer maintSleep;
+	private Integer maintSleep=30;
 
-	private Boolean nagle;
+	private Boolean nagle=false;
 
-	private Integer socketTO;
+	private Integer socketTO=3000;
 
-	private Boolean aliveCheck;
+	private Boolean aliveCheck=true;
 
 	public Boolean getFailover() {
 		return failover;

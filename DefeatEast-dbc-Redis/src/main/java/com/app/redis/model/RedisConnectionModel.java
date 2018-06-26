@@ -1,4 +1,4 @@
-package com.app.dbc.config.redis;
+package com.app.redis.model;
 
 public class RedisConnectionModel {
 	private String hostName;

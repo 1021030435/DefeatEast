@@ -70,5 +70,7 @@
 		<module>DefeatEast-util</module>
 		<module>DefeatEast-captcha</module>
 		<module>DefeatEast-dbc</module>
+		<module>DefeatEast-dbc-Redis</module>
+		<module>DefeatEast-dbc-MemCache</module>
 	</modules>
 </project>

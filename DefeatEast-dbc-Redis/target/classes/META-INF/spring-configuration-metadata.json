@@ -1,0 +1,32 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.app.redis.model.JedisPoolModel",
+      "name": "jedispool",
+      "type": "com.app.redis.model.JedisPoolModel"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.app.redis.model.JedisPoolModel",
+      "name": "jedispool.max-idle",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.app.redis.model.JedisPoolModel",
+      "name": "jedispool.max-total",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.app.redis.model.JedisPoolModel",
+      "name": "jedispool.max-wait-millis",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.app.redis.model.JedisPoolModel",
+      "name": "jedispool.min-idle",
+      "type": "java.lang.Integer"
+    }
+  ]
+}
