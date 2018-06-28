@@ -4,8 +4,10 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
-import com.app.log.AppLog;
+import com.app.logs.AppLog;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
@@ -14,7 +16,8 @@ public class RunTimeInterceptor {
 
 	@Autowired
 	private AppLog log;
-
+	@Value("execution_expression")
+	
 	@Around("execution (* com.app.code.service.*.*(..))")
 	public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
 		long time = System.currentTimeMillis();
