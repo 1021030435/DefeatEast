@@ -23,8 +23,7 @@ public class OnlineSMS implements Online {
 		request.setSmsParamString("{\"code\":\"" + code + "\"}");
 		request.setRecNum(key);
 		request.setSmsTemplateCode(model.getTemplateCode());
-		//AlibabaAliqinFcSmsNumSendResponse response = client.execute(request);
-		//return response.isSuccess() ? SEND_SUCCESS : SEND_FINAL;
-		return SEND_SUCCESS;
+		AlibabaAliqinFcSmsNumSendResponse response = client.execute(request);
+		return response.isSuccess() ? SEND_SUCCESS : SEND_FINAL;
 	}
 }
