@@ -24,6 +24,7 @@ public class ValidateController extends BaseController {
 			throw new CodeException();
 		}
 
+		codeService.delete(model.getKey());
 		return result(SUCCESS);
 	}
 }

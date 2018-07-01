@@ -24,4 +24,9 @@ public class KeepCodeServiceImpl implements KeepCodeService {
 		return memCachedClient.get(key).toString();
 	}
 
+	@Override
+	public Boolean delete(String key) throws Exception {
+		return memCachedClient.delete(key);
+	}
+
 }
