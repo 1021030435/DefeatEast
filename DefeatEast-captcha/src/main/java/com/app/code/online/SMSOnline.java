@@ -9,7 +9,7 @@ import com.taobao.api.request.AlibabaAliqinFcSmsNumSendRequest;
 import com.taobao.api.response.AlibabaAliqinFcSmsNumSendResponse;
 
 @Component
-public class OnlineSMS implements Online {
+public class SMSOnline implements Online {
 
 	@Autowired
 	private SmsModel model;

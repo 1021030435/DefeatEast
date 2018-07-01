@@ -10,7 +10,7 @@ import java.awt.image.BufferedImage;
 import java.util.Arrays;
 import java.util.Random;
 
-public class OnlineImg {
+public class ImgOnline {
 
 	private static Random random = new Random();
 

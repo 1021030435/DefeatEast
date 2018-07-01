@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import com.app.code.config.EmailModel;
 
 @Component
-public class OnlineEmail implements Online {
+public class EmailOnline implements Online {
 
 	@Autowired
 	private EmailModel model;

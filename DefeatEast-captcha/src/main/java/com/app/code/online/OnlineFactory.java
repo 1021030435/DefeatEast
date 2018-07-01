@@ -11,10 +11,10 @@ import static com.app.utils.KeyUtil.*;
 public class OnlineFactory {
 
 	@Autowired
-	private OnlineSMS sms;
+	private SMSOnline sms;
 
 	@Autowired
-	private OnlineEmail email;
+	private EmailOnline email;
 	
 	@Autowired
 	private CodeRecordService recordService;

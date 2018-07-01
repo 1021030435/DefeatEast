@@ -11,7 +11,7 @@ import com.app.exception.CacheException;
 import com.app.base.BaseController;
 import com.app.code.service.KeepCodeService;
 
-import static com.app.code.online.OnlineImg.*;
+import static com.app.code.online.ImgOnline.*;
 import static com.app.utils.RandomCode.*;
 
 @Controller
