@@ -5,14 +5,17 @@ import java.util.concurrent.ThreadLocalRandom;
 import static com.app.base.AppConfig.*;
 
 public class RandomCode {
-	
-	/**
-	 * 使用系统默认字符源生成验证码
-	 * @return
-	 */
+
 	public static String getCode() {
+		return CreateCode(CODE_SOURCES);
+	}
+
+	public static String getNumCode() {
+		return CreateCode(NUM_SOURCES);
+	}
+
+	private static String CreateCode(String sources) {
 		int verifySize = COED_SIZE;
-		String sources = CODE_SOURCES;
 		int codesLen = sources.length();
 		ThreadLocalRandom rand = ThreadLocalRandom.current();
 		StringBuilder verifyCode = new StringBuilder(verifySize);

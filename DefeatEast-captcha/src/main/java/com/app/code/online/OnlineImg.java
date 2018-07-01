@@ -1,4 +1,4 @@
-package com.app.code.util;
+package com.app.code.online;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -10,7 +10,7 @@ import java.awt.image.BufferedImage;
 import java.util.Arrays;
 import java.util.Random;
 
-public class ImgUtil {
+public class OnlineImg {
 
 	private static Random random = new Random();
 

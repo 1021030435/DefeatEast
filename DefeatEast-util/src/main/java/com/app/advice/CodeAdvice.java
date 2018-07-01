@@ -9,6 +9,7 @@ import com.app.exception.CacheException;
 import com.app.exception.FrequencyException;
 import com.app.exception.EmailErrorException;
 import com.app.exception.CacheSMSCodeException;
+import com.app.exception.CodeException;
 import com.app.exception.PhoneException;
 
 @RestControllerAdvice
@@ -42,5 +43,11 @@ public class CodeAdvice extends BaseController{
 	public OperateResult<Object> test(PhoneException ex) {
 		ex.printStackTrace();
 		return result(PHONE_ERROR);
+	}
+	
+	@ExceptionHandler(value = CodeException.class)
+	public OperateResult<Object> test(CodeException ex) {
+		ex.printStackTrace();
+		return result(CODE_EXIST_ERROR);
 	}
 }
