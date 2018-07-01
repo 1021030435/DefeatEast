@@ -24,6 +24,6 @@ public class SMSOnline implements Online {
 		request.setRecNum(key);
 		request.setSmsTemplateCode(model.getTemplateCode());
 		AlibabaAliqinFcSmsNumSendResponse response = client.execute(request);
-		return response.isSuccess() ? SEND_SUCCESS : SEND_FINAL;
+		return response.isSuccess() ? SEND_SUCCESS : SEND_FAIL;
 	}
 }

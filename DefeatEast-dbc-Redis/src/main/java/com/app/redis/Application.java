@@ -1,4 +1,4 @@
-package com.app.start;
+package com.app.redis;
 
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
