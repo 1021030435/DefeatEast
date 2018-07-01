@@ -21,19 +21,18 @@ public class SendTask {
 	@Scheduled(cron = "${send.corn}")
 	public void send() {
 		SendModel model = queue.getTask();
-		if (model == null) {
-			return;
-		}
+		while (model != null) {
+			try {
+				Boolean seccess = codeService.put(model.getKey(), model.getCode());
+				if (!seccess) {
+					return;
+				}
 
-		try {
-			Boolean seccess = codeService.put(model.getKey(), model.getCode());
-			if (!seccess) {
-				return;
+				factory.send(model.getKey(), model.getCode());
+				model = queue.getTask();
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-
-			factory.send(model.getKey(), model.getCode());
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 	}
 }
