@@ -1,13 +1,14 @@
 package com.app.logs;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 @Component
 public class AppLog {
 
-	private Logger log = LoggerFactory.getLogger(getClass());
+	//private Logger log = LoggerFactory.getLogger(getClass());
+	private  final Logger log = LogManager.getLogger(getClass());
 
 	public void info(String marker, String msg) {
 		log.info(marker, msg);
