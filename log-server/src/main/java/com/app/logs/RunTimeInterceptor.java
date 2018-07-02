@@ -3,6 +3,7 @@ package com.app.logs;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -10,15 +11,17 @@ import org.springframework.stereotype.Component;
 import com.app.logs.AppLog;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Component
 @Aspect
+@Component
 public class RunTimeInterceptor {
 
 	@Autowired
 	private AppLog log;
-	@Value("execution_expression")
 	
-	@Around("execution (* com.app.code.service.*.*(..))")
+	@Pointcut("@annotation(com.app.logAnnotation.SaveLog)")
+	public void cutPoint() {}
+	
+	@Around("cutPoint()")
 	public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
 		long time = System.currentTimeMillis();
 		log.info("执行方法【{}】", joinPoint.getSignature().getName());
