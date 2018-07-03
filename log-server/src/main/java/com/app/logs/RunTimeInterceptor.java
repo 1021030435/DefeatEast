@@ -5,8 +5,6 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 import com.app.logs.AppLog;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,6 +23,7 @@ public class RunTimeInterceptor {
 	public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
 		long time = System.currentTimeMillis();
 		log.info("执行方法【{}】", joinPoint.getSignature().getName());
+		log.error("test","tt");
 		Object result = null;
 		try {
 			result = joinPoint.proceed();

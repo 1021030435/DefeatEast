@@ -7,8 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AppLog {
 
-	//private Logger log = LoggerFactory.getLogger(getClass());
-	private  final Logger log = LogManager.getLogger(getClass());
+	private  Logger log = LogManager.getLogger(getClass());
 
 	public void info(String marker, String msg) {
 		log.info(marker, msg);

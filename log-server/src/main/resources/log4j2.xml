@@ -4,6 +4,7 @@
         <Property name="baseDir">/DefeatEast/logs</Property>  
         <Property name="filename">/DefeatEast/logs/baseCollection.log</Property>  
         <Property name="filenameError">/DefeatEast/logs/baseCollectionError.log</Property>  
+    <Property name="fileGz">/DefeatEast/logs/7z</Property>
     </Properties>  
   
     <Appenders>  
