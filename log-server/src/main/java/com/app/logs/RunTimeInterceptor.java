@@ -23,7 +23,6 @@ public class RunTimeInterceptor {
 	public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
 		long time = System.currentTimeMillis();
 		log.info("执行方法【{}】", joinPoint.getSignature().getName());
-		log.error("test","tt");
 		Object result = null;
 		try {
 			result = joinPoint.proceed();
