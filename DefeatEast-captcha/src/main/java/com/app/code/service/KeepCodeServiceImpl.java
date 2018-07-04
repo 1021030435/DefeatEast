@@ -21,12 +21,16 @@ public class KeepCodeServiceImpl implements KeepCodeService {
 
 	@Override
 	public String getCode(String key) throws Exception {
-		return memCachedClient.get(key).toString();
+		Object object = memCachedClient.get(key);
+		if (object == null) {
+			return null;
+		}
+
+		return object.toString();
 	}
 
 	@Override
 	public Boolean delete(String key) throws Exception {
 		return memCachedClient.delete(key);
 	}
-
 }

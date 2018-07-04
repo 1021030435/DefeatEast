@@ -1,14 +1,13 @@
 package com.app.code.online;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import com.app.code.config.SmsModel;
 import com.taobao.api.DefaultTaobaoClient;
 import com.taobao.api.TaobaoClient;
 import com.taobao.api.request.AlibabaAliqinFcSmsNumSendRequest;
 import com.taobao.api.response.AlibabaAliqinFcSmsNumSendResponse;
 
-@Component
+@OnlineType(type = OnlineEnum.SMS)
 public class SMSOnline implements Online {
 
 	@Autowired
@@ -24,6 +23,7 @@ public class SMSOnline implements Online {
 		request.setRecNum(key);
 		request.setSmsTemplateCode(model.getTemplateCode());
 		AlibabaAliqinFcSmsNumSendResponse response = client.execute(request);
-		return response.isSuccess() ? SEND_SUCCESS : SEND_FAIL;
+		return response.isSuccess() ? SEND_SUCCESS : SEND_FINAL;
 	}
+	
 }

@@ -28,7 +28,7 @@ public class SendTask {
 					return;
 				}
 
-				factory.send(model.getKey(), model.getCode());
+				factory.send(model);
 				model = queue.getTask();
 			} catch (Exception e) {
 				e.printStackTrace();

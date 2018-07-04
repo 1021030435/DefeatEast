@@ -6,9 +6,9 @@ public class CodeRecord {
 	
     private Integer id;
 
-    private String phone;
+    private String sendTarget;
 
-    private String email;
+    private Integer sendType;
 
     private String code;
 
@@ -28,20 +28,20 @@ public class CodeRecord {
         this.id = id;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getSendTarget() {
+        return sendTarget;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setSendTarget(String sendTarget) {
+        this.sendTarget = sendTarget;
     }
 
-    public String getEmail() {
-        return email;
+    public Integer getSendType() {
+        return sendType;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setSendType(Integer sendType) {
+        this.sendType = sendType;
     }
 
     public String getCode() {

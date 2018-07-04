@@ -13,6 +13,7 @@ import com.app.exception.PhoneException;
 import static com.app.utils.KeyUtil.*;
 import static com.app.utils.RandomCode.*;
 import static com.app.base.AdviceEnum.*;
+import static com.app.code.online.OnlineEnum.*;
 
 @RestController
 public class SMSController extends BaseController {
@@ -35,7 +36,8 @@ public class SMSController extends BaseController {
 		}
 
 		String code = getNumCode();
-		queue.putTask(phone, code);
+		queue.putTask(phone, code, SMS);
 		return result(SUCCESS);
 	}
+	
 }

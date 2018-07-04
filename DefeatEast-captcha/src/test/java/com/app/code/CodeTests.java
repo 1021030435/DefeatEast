@@ -33,17 +33,17 @@
 //	@Test
 //	public void contextLoads() throws Exception{
 ////		//serv.tt();
-//		 //MemCachedClient memCachedClient = new MemCachedClient();
-////	        for (int i = 0; i < 10; i++) {
-////	            /* 将对象加入到memcached缓存 */
-////	            boolean success = memCachedClient.set("" + i, "Hellow!");
-////	            /* 从memcached缓存中按key值取对象 */
-////	            String result = (String) memCachedClient.get("" + i);
-////	            System.out.println(String.format("set( %d ): %s", i, success));
-////	            System.out.println(String.format("get( %d ): %s", i, result));
-////	        }
+//		// MemCachedClient memCachedClient = new MemCachedClient();
+//	        for (int i = 0; i < 10; i++) {
+//	            /* 将对象加入到memcached缓存 */
+//	            boolean success = memCachedClient.set("" + i, "Hellow!");
+//	            /* 从memcached缓存中按key值取对象 */
+//	            String result = (String) memCachedClient.get("" + i);
+//	            System.out.println(String.format("set( %d ): %s", i, success));
+//	            System.out.println(String.format("get( %d ): %s", i, result));
+//        }
 //		
-//		util.sendEmail("871942280@qq.com", "12349");
+//		//util.sendEmail("871942280@qq.com", "12349");
 //	}
 //
 //}

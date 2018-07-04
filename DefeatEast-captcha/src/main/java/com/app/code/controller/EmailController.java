@@ -14,6 +14,7 @@ import com.app.code.service.KeepCodeService;
 import com.app.code.task.CodeQueue;
 import com.app.utils.KeyUtil;
 import static com.app.base.AdviceEnum.*;
+import static com.app.code.online.OnlineEnum.*;
 
 @RestController
 public class EmailController extends BaseController {
@@ -36,7 +37,8 @@ public class EmailController extends BaseController {
 		}
 
 		String code = getNumCode();
-		queue.putTask(address, code);
+		queue.putTask(address, code, EMAIL);
 		return result(SUCCESS);
 	}
+	
 }

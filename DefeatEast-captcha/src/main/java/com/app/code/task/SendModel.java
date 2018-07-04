@@ -2,6 +2,8 @@ package com.app.code.task;
 
 import java.util.Date;
 
+import com.app.code.online.OnlineEnum;
+
 public class SendModel {
 
 	private String key;
@@ -9,6 +11,8 @@ public class SendModel {
 	private String code;
 
 	private Date sendTime;
+	
+	private OnlineEnum onlineEnum; 
 
 	public String getKey() {
 		return key;
@@ -34,4 +38,11 @@ public class SendModel {
 		this.sendTime = sendTime;
 	}
 
+	public OnlineEnum getOnlineEnum() {
+		return onlineEnum;
+	}
+
+	public void setOnlineEnum(OnlineEnum onlineEnum) {
+		this.onlineEnum = onlineEnum;
+	}
 }

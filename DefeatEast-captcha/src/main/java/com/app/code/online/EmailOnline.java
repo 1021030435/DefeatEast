@@ -2,10 +2,9 @@ package com.app.code.online;
 
 import org.apache.commons.mail.HtmlEmail;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import com.app.code.config.EmailModel;
 
-@Component
+@OnlineType(type = OnlineEnum.EMAIL)
 public class EmailOnline implements Online {
 
 	@Autowired
@@ -24,9 +23,10 @@ public class EmailOnline implements Online {
 			String result = email.send();
 			System.out.println(result);
 		} catch (Exception e) {
-			return SEND_FAIL;
+			return SEND_FINAL;
 		}
 
 		return SEND_SUCCESS;
 	}
+	
 }
