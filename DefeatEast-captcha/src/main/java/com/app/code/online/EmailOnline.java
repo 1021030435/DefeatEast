@@ -23,7 +23,7 @@ public class EmailOnline implements Online {
 			String result = email.send();
 			System.out.println(result);
 		} catch (Exception e) {
-			return SEND_FINAL;
+			return SEND_FAIL;
 		}
 
 		return SEND_SUCCESS;
