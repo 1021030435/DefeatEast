@@ -86,6 +86,8 @@
 		<module>DefeatEast-util</module>
 		<module>DefeatEast-captcha</module>
 		<module>DefeatEast-dbc-Redis</module>
+		<module>DefeatEast-usercenter</module>
 		<module>log-server</module>
 	</modules>
 </project>
+
