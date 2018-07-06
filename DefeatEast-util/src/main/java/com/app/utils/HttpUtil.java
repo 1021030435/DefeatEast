@@ -94,7 +94,7 @@ public class HttpUtil {
 		}
 	}
 
-	public static void main(String[] args) throws Exception {
-		System.out.println(get("http://www.baidu.com"));
-	}
+//	public static void main(String[] args) throws Exception {
+//		System.out.println(get("http://www.baidu.com"));
+//	}
 }
