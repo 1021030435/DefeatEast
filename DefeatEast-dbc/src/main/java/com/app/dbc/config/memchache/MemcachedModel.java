@@ -3,8 +3,8 @@ package com.app.dbc.config.memchache;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-@Component
-@ConfigurationProperties(prefix = "memcached")
+//@Component
+//@ConfigurationProperties(prefix = "memcached")
 public class MemcachedModel {
 
 	private String servers;

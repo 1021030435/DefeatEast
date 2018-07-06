@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import com.whalin.MemCached.MemCachedClient;
 import com.whalin.MemCached.SockIOPool;
 
-@Configuration
+//@Configuration
 public class MemcachedConfig {
 
 	@Autowired

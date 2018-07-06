@@ -3,8 +3,8 @@ package com.app.redis.model;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-@Component
-@ConfigurationProperties(prefix="jedispool")
+//@Component
+//@ConfigurationProperties(prefix="jedispool")
 public class JedisPoolModel {
 
 	private Integer maxWaitMillis=-1;

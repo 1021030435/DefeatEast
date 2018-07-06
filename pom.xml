@@ -26,12 +26,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
+			<!--  <exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-logging</artifactId>
 				</exclusion>
-			</exclusions>
+			</exclusions>-->
 		</dependency>
 
 		<dependency>
@@ -87,7 +87,6 @@
 		<module>DefeatEast-captcha</module>
 		<module>DefeatEast-dbc</module>
 		<module>DefeatEast-dbc-Redis</module>
-		<module>DefeatEast-dbc-MemCache</module>
 		<module>log-server</module>
 	</modules>
 </project>
