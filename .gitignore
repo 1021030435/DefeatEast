@@ -1,5 +1,6 @@
 /target/
 /class/
+AppTest.java
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
