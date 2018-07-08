@@ -1,0 +1,15 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd">
+
+	<defaultCache maxElementsInMemory="10000" 
+	              eternal="false"
+		          timeToIdleSeconds="120"
+		          overflowToDisk="true"
+		          memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="user" 
+	       maxEntriesLocalHeap="200" 
+	       timeToLiveSeconds="600">
+	</cache>
+
+</ehcache>
