@@ -30,9 +30,4 @@ public class UserController extends BaseController {
 		Integer insert = userService.signin(model.getKey(), model.getLinkType(), model.getPsw());
 		return result(insert);
 	}
-	
-	@RequestMapping("/t")
-	public String ee() {
-		return "";
-	}
 }
