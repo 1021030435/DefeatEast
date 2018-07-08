@@ -17,7 +17,7 @@ AppTest.java
 *.iws
 *.iml
 *.ipr
-
+/bin/
 ### NetBeans ###
 /nbproject/private/
 /build/
