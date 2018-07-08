@@ -172,7 +172,7 @@
 
 		<module>DefeatEast-captcha</module>
 
-		<module>DefeatEast-dbc-Redis</module>
+		<module>DefeatEast-redis</module>
 
 		<module>DefeatEast-usercenter</module>
 
