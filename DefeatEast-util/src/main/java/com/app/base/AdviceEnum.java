@@ -14,7 +14,8 @@ public enum AdviceEnum {
 	USER_ERROR(10010, "用户错误"),
 	PSW_ERROR(10011, "密码错误"),
 	KEY_ERROR(10012, "账号错误"),
-	PARAM_ERROR(10013, "参数错误");
+	PARAM_ERROR(10013, "参数错误"),
+	USER_EXIST(10014, "用户存在"),;
 
 	private Integer errno;
 

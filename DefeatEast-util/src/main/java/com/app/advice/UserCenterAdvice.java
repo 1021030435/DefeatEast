@@ -6,6 +6,7 @@ import static com.app.base.AdviceEnum.*;
 import com.app.base.BaseController;
 import com.app.base.OperateResult;
 import com.app.exception.PswException;
+import com.app.exception.UserExistException;
 import com.app.exception.UserNotFoundException;
 
 @RestControllerAdvice
@@ -21,5 +22,11 @@ public class UserCenterAdvice extends BaseController{
 	public OperateResult<Object> test(UserNotFoundException ex) {
 		ex.printStackTrace();
 		return result(USER_ERROR);
+	}
+	
+	@ExceptionHandler(value = UserExistException.class)
+	public OperateResult<Object> test(UserExistException ex) {
+		ex.printStackTrace();
+		return result(USER_EXIST);
 	}
 }

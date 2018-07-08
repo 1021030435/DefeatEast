@@ -6,7 +6,7 @@ public class UserModel {
 	
 	private String psw;
 	
-	private String name;
+	private Integer linkType;
 
 	public String getKey() {
 		return key;
@@ -24,11 +24,11 @@ public class UserModel {
 		this.psw = psw;
 	}
 
-	public String getName() {
-		return name;
+	public Integer getLinkType() {
+		return linkType;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setLinkType(Integer linkType) {
+		this.linkType = linkType;
 	}
 }

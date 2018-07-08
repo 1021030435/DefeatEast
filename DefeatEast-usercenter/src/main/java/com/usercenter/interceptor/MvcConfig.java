@@ -9,7 +9,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		WebMvcConfigurer.super.addInterceptors(registry);
 		//registry.addInterceptor();
+		WebMvcConfigurer.super.addInterceptors(registry);
 	}
 }
