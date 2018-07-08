@@ -8,7 +8,6 @@ import com.app.base.OperateResult;
 import com.app.exception.CacheException;
 import com.app.exception.FrequencyException;
 import com.app.exception.EmailErrorException;
-import com.app.exception.CacheSMSCodeException;
 import com.app.exception.CodeException;
 import com.app.exception.PhoneException;
 
@@ -31,12 +30,6 @@ public class CodeAdvice extends BaseController{
 	public OperateResult<Object> test(EmailErrorException ex) {
 		ex.printStackTrace();
 		return result(EMAIL_ERROR);
-	}
-	
-	@ExceptionHandler(value = CacheSMSCodeException.class)
-	public OperateResult<Object> test(CacheSMSCodeException ex) {
-		ex.printStackTrace();
-		return result(CACHE_ERROR);
 	}
 	
 	@ExceptionHandler(value = PhoneException.class)
