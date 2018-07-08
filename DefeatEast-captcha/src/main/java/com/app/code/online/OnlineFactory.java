@@ -3,12 +3,10 @@ package com.app.code.online;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 import com.app.code.service.CodeRecordService;
-import com.app.code.service.KeepCodeService;
 import com.app.code.task.SendModel;
 
 @Component
@@ -19,9 +17,6 @@ public class OnlineFactory {
 
 	@Autowired
 	private CodeRecordService recordService;
-	
-	@Autowired
-	private KeepCodeService codeService;
 
 	public void send(SendModel model) throws Exception {
 		Map<String, Object> map = context.getBeansWithAnnotation(OnlineType.class);
@@ -35,7 +30,6 @@ public class OnlineFactory {
 			}
 
 			Integer success = new OnlineSend(context.getBean(clazz)).send(model.getKey(), model.getCode());
-			codeService.put(model.getKey(), model.getCode());
 			recordService.insert(model.getOnlineEnum().getType(), model.getKey(), model.getCode(), success);
 			break;
 		}
