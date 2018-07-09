@@ -19,7 +19,7 @@ public class UserServiceImpl implements UserService {
 	private UserMapper mapper;
 
 	@Override
-	@Cacheable("user")
+	@Cacheable(cacheNames = "user", key = "#p0")
 	public User login(String link, String psw) throws UserNotFoundException, PswException, Exception {
 		User user = findByLink(link);
 		if (user == null) {
@@ -30,13 +30,12 @@ public class UserServiceImpl implements UserService {
 		if (!psw.equals(user.getPsw())) {
 			throw new PswException();
 		}
-
 		return user;
 	}
 
 	@Override
-	@CachePut("user")
-	public Integer signin(String link, Integer linkType, String psw) throws UserExistException, Exception {
+	@CachePut(cacheNames = "user", key = "#p0")
+	public User signin(String link, Integer linkType, String psw) throws UserExistException, Exception {
 		User user = findByLink(link);
 		if (user != null) {
 			throw new UserExistException();
@@ -48,7 +47,8 @@ public class UserServiceImpl implements UserService {
 		user.setLinkType(linkType);
 		user.setSalt(salt);
 		user.setPsw(str2MD5(str2MD5(psw) + salt));
-		return mapper.signin(user);
+		mapper.signin(user);
+		return user;
 	}
 
 	@Cacheable("user")

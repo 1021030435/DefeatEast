@@ -26,8 +26,9 @@ public class UserController extends BaseController {
 	}
 
 	@RequestMapping("/user/signin")
-	public OperateResult<Integer> signin(@RequestBody UserModel model) throws UserExistException, Exception {
-		Integer insert = userService.signin(model.getKey(), model.getLinkType(), model.getPsw());
-		return result(insert);
+	public OperateResult<User> signin(@RequestBody UserModel model) throws UserExistException, Exception {
+		User  User = userService.signin(model.getKey(), model.getLinkType(), model.getPsw());
+		
+		return result(User);
 	}
 }

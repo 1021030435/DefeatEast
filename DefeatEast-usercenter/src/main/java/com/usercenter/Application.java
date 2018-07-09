@@ -20,12 +20,5 @@ public class Application {
 		app.setBannerMode(Banner.Mode.OFF);
 		app.run(args);
 	}
-	
-	@Bean
-	public FilterRegistrationBean<UserFilter> filter() {
-		FilterRegistrationBean<UserFilter> bean = new FilterRegistrationBean<UserFilter>();
-		bean.setFilter(new UserFilter());
-		//bean.addUrlPatterns("");
-		return bean;
-	}
+
 }
