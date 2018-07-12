@@ -16,5 +16,4 @@ public class Application {
 		app.setBannerMode(Banner.Mode.OFF);
 		app.run(args);
 	}
-
 }
