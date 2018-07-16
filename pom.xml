@@ -93,5 +93,6 @@
 		<module>DefeatEast-usercenter</module>
 		<module>DefeatEast-log</module>
 		<module>DefeatEast-gateway</module>
+		<module>DefeatEast-solr</module>
 	</modules>
 </project>
