@@ -10,4 +10,6 @@ public interface UserService {
 	User login(String link, String psw) throws UserNotFoundException, PswException, Exception;
 
 	User signin(String link, Integer linkType, String psw) throws UserExistException, Exception;
+
+	User updatePsw(String key, String psw) throws UserExistException, Exception;
 }

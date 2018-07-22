@@ -55,5 +55,20 @@ public class UserServiceImpl implements UserService {
 	private User findByLink(String link) throws Exception {
 		return mapper.findByLink(link);
 	}
+	
+	@CachePut(cacheNames = "user", key = "#p0")
+	@Override
+	public User updatePsw(String link, String psw) throws Exception {
+		User user = findByLink(link);
+		if (user == null) {
+			throw new UserNotFoundException();
+		}
+		String salt = getCode();
+		user.setSalt(salt);
+		user.setPsw(str2MD5(str2MD5(psw)+salt));
+		mapper.updateById(user);
+		
+		return user;
+	}
 
 }
