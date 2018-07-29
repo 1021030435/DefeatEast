@@ -20,6 +20,6 @@ public interface UserMapper {
 	@Insert("INSERT INTO t_user(link,link_type,psw,salt) VALUES(#{user.link},#{user.linkType},#{user.psw},#{user.salt})")
 	Integer signin(@Param("user") User user);
 
-	 @Update("UPDATE t_user SET psw=#{user.psw}  , salt =#{user.salt} where id= #{user.id}  ")
+	 @Update("UPDATE t_user SET psw=#{user.psw}  , salt =#{user.salt},monify_Time=#{user.monifyTime} where id= #{user.id}  ")
 	 Integer updateById(@Param("user") User user);
 }

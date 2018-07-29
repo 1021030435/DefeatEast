@@ -5,7 +5,16 @@ public class UserModel {
 	private String key; 
 	
 	private String psw;
+	private String name;
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	private Integer linkType;
 
 	public String getKey() {

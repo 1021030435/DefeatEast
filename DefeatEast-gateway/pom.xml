@@ -1,19 +1,32 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>DefeatEast</groupId>
-    <artifactId>DefeatEast</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <groupId>DefeatEast-gateway</groupId>
-  <artifactId>DefeatEast-gateway</artifactId>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>DefeatEast</groupId>
+		<artifactId>DefeatEast</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>DefeatEast-gateway</groupId>
+	<artifactId>DefeatEast-gateway</artifactId>
 
-  <name>DefeatEast-gateway</name>
-  <url>http://maven.apache.org</url>
-  
-  <dependencies>
-    
-  </dependencies>
+	<name>DefeatEast-gateway</name>
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>DefeatEast-util</groupId>
+			<artifactId>DefeatEast-util</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>DefeatEast-redis</groupId>
+			<artifactId>DefeatEast-redis</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+	</dependencies>
 </project>

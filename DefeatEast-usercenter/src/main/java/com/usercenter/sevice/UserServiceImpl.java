@@ -10,6 +10,9 @@ import com.app.exception.UserNotFoundException;
 import com.usercenter.db.mapper.UserMapper;
 import com.usercenter.db.model.User;
 import static com.app.utils.RandomCode.*;
+
+import java.util.Date;
+
 import static com.app.utils.MD5Utils.*;
 
 @Service
@@ -66,6 +69,7 @@ public class UserServiceImpl implements UserService {
 		String salt = getCode();
 		user.setSalt(salt);
 		user.setPsw(str2MD5(str2MD5(psw)+salt));
+		user.setMonifyTime(new Date());
 		mapper.updateById(user);
 		
 		return user;
