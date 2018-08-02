@@ -21,7 +21,6 @@ import com.app.utils.HttpUtil;
 import com.app.utils.JavaWebToken;
 import com.app.utils.KeyUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gateway.db.model.User;
 import com.gateway.service.UserService;
 import static com.app.base.AdviceEnum.*;
 
@@ -64,7 +63,7 @@ public class GateWayController extends BaseController {
 		validate.setCode(code);//验证码
 		validate.setKey(key);//账户
 		String json = mapper.writeValueAsString(validate);
-		String result = HttpUtil.postJson(code_server + "validate", json);
+		String result = HttpUtil.postJson(code_server + "/validate", json);
 		OperateResult operate = mapper.readValue(result, OperateResult.class);
 		if (!operate.getErrno().equals(SUCCESS.getErrno())) {
 			return operate;
@@ -86,7 +85,7 @@ public class GateWayController extends BaseController {
 			return operate;
 		}
 
-		return result();
+		return result(SUCCESS);
 	}
 
 	@RequestMapping("/login")
@@ -101,22 +100,24 @@ public class GateWayController extends BaseController {
 		user.setKey(key);
 		user.setPsw(psw);
 		String json = mapper.writeValueAsString(user);
+		
 		String result = HttpUtil.postJson(usercenter+"/user/login", json);
+		System.err.println(result);
 		OperateResult operate = mapper.readValue(result, OperateResult.class);
 		if (!operate.getErrno().equals(SUCCESS.getErrno())) {
 		 return	operate;
 		}
 
-		User userr = (User) operate.getData();
+		Integer userId= (Integer) operate.getData();
 		HashMap<String, Object> infoMap = new HashMap<String, Object>();
-		infoMap.put(AppConfig.JWT_MAP_KEY, userr.getId());
+		infoMap.put(AppConfig.JWT_MAP_KEY, userId);
 		String token = JavaWebToken.getToken(infoMap);
 		response.setHeader(AppConfig.JWT_RESPONSE, token);
-		template.opsForValue().set(userr.getId() + "", token);
-		template.expire(userr.getId()
+		template.opsForValue().set(userId + "", token);
+		template.expire(userId
 				+ "", AppConfig.JWT_EXPIRE_TIME, TimeUnit.MILLISECONDS);
-	//	userService.insertUser(userId, token, new Date(System.currentTimeMillis() + AppConfig.JWT_EXPIRE_TIME));
-		return result();
+		userService.insertUser(userId, token, new Date(System.currentTimeMillis() + AppConfig.JWT_EXPIRE_TIME));
+		return result(SUCCESS);
 	}
 	
 	

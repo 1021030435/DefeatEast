@@ -20,7 +20,7 @@ public class ValidateController extends BaseController {
 	@RequestMapping("/validate")
 	public OperateResult<Object> through(@RequestBody ValidateModel model) throws CodeException, Exception {
 		String code = codeService.getCode(model.getKey());
-		if (!code.equals(model.getCode())) {
+		if (code==null||!code.equals(model.getCode())) {
 			throw new CodeException();
 		}
 

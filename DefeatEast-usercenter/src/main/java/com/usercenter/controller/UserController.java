@@ -20,21 +20,21 @@ public class UserController extends BaseController {
 	private UserService userService;
 
 	@RequestMapping("/user/login")
-	public OperateResult<User> login(@RequestBody UserModel model)
+	public OperateResult<Integer> login(@RequestBody UserModel model)
 			throws UserNotFoundException, PswException, Exception {
-		return result(userService.login(model.getKey(), model.getPsw()));
+		return result(userService.login(model.getKey(), model.getPsw()).getId());
 	}
 	
 	@RequestMapping("/user/updatePsw")
-	public OperateResult<User> updatePsw(@RequestBody UserModel model)
+	public OperateResult<Integer> updatePsw(@RequestBody UserModel model)
 			throws UserNotFoundException, PswException, Exception {
-		return result(userService.updatePsw(model.getKey(),model.getPsw()));
+		return result(userService.updatePsw(model.getKey(),model.getPsw()).getId());
 	}
 
 	@RequestMapping("/user/signin")
-	public OperateResult<User> signin(@RequestBody UserModel model) throws UserExistException, Exception {
+	public OperateResult<Integer> signin(@RequestBody UserModel model) throws UserExistException, Exception {
 		User  User = userService.signin(model.getKey(), model.getLinkType(), model.getPsw());
 		
-		return result(User);
+		return result(User.getId());
 	}
 }
